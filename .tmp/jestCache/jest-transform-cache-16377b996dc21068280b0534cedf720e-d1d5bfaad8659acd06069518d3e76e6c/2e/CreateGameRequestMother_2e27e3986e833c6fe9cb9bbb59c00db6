@@ -1,0 +1,16 @@
+084235c14bff22892268771f3b051db6
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateGameRequestMother = void 0;
+class CreateGameRequestMother {
+    static create( /* todo: agrega los campos de tu entidad */) {
+        return {
+        /* todo: agrega los campos de tu entidad */
+        };
+    }
+    static generate() {
+        return this.create( /* todo: agrega los campos de tu entidad */);
+    }
+}
+exports.CreateGameRequestMother = CreateGameRequestMother;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHRlc3RzXFxjb250ZXh0c1xcbGV2aXRhXFxHYW1lc1xcYXBwbGljYXRpb25cXENyZWF0ZUdhbWVSZXF1ZXN0TW90aGVyLnRzIiwibWFwcGluZ3MiOiI7OztBQUdBLE1BQWEsdUJBQXVCO0lBQ25DLE1BQU0sQ0FBQyxNQUFNLEVBQUMsMkNBQTJDO1FBQ3hELE9BQU87UUFDTiwyQ0FBMkM7U0FDM0MsQ0FBQTtJQUNGLENBQUM7SUFFRCxNQUFNLENBQUMsUUFBUTtRQUNkLE9BQU8sSUFBSSxDQUFDLE1BQU0sRUFBQywyQ0FBMkMsQ0FBQyxDQUFBO0lBQ2hFLENBQUM7Q0FDRDtBQVZELDBEQVVDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcam9zZWFcXERvY3VtZW50c1xcd29yZGxlXFx0ZXN0c1xcY29udGV4dHNcXGxldml0YVxcR2FtZXNcXGFwcGxpY2F0aW9uXFxDcmVhdGVHYW1lUmVxdWVzdE1vdGhlci50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBXb3JkVXNlclJlcXVlc3QgfSBmcm9tICcuLi8uLi8uLi8uLi8uLi9zcmMvQ29udGV4dHMvbGV2aXRhL0dhbWVzL2FwcGxpY2F0aW9uL1dvcmRVc2VyUmVxdWVzdCdcclxuaW1wb3J0IHsgR2FtZVdvcmRNb3RoZXIgfSBmcm9tICcuLi9kb21haW4vR2FtZVdvcmRNb3RoZXInXHJcblxyXG5leHBvcnQgY2xhc3MgQ3JlYXRlR2FtZVJlcXVlc3RNb3RoZXIge1xyXG5cdHN0YXRpYyBjcmVhdGUoLyogdG9kbzogYWdyZWdhIGxvcyBjYW1wb3MgZGUgdHUgZW50aWRhZCAqLyk6IFdvcmRVc2VyUmVxdWVzdCB7XHJcblx0XHRyZXR1cm4ge1xyXG5cdFx0XHQvKiB0b2RvOiBhZ3JlZ2EgbG9zIGNhbXBvcyBkZSB0dSBlbnRpZGFkICovXHJcblx0XHR9XHJcblx0fVxyXG5cclxuXHRzdGF0aWMgZ2VuZXJhdGUoKTogV29yZFVzZXJSZXF1ZXN0IHtcclxuXHRcdHJldHVybiB0aGlzLmNyZWF0ZSgvKiB0b2RvOiBhZ3JlZ2EgbG9zIGNhbXBvcyBkZSB0dSBlbnRpZGFkICovKVxyXG5cdH1cclxufVxyXG4iXSwidmVyc2lvbiI6M30=

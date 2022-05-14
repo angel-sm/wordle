@@ -1,0 +1,17 @@
+21ba92cb18ff641ce75b3e2efb800968
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MongoConfigFactory = void 0;
+const config_1 = __importDefault(require("../../config"));
+class MongoConfigFactory {
+    static createConfig() {
+        return {
+            url: config_1.default.get('mongo.url'),
+        };
+    }
+}
+exports.MongoConfigFactory = MongoConfigFactory;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcc2hhcmVkXFxpbmZyYXN0cnVjdHVyZVxccGVyc2lzdGVuY2VcXG1vbmdvXFxNb25nb0NvbmZpZ0ZhY3RvcnkudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsMERBQWlDO0FBR2pDLE1BQWEsa0JBQWtCO0lBQzlCLE1BQU0sQ0FBQyxZQUFZO1FBQ2xCLE9BQU87WUFDTixHQUFHLEVBQUUsZ0JBQU0sQ0FBQyxHQUFHLENBQUMsV0FBVyxDQUFDO1NBQzVCLENBQUE7SUFDRixDQUFDO0NBQ0Q7QUFORCxnREFNQyIsIm5hbWVzIjpbXSwic291cmNlcyI6WyJDOlxcVXNlcnNcXGpvc2VhXFxEb2N1bWVudHNcXHdvcmRsZVxcc3JjXFxDb250ZXh0c1xcbGV2aXRhXFxzaGFyZWRcXGluZnJhc3RydWN0dXJlXFxwZXJzaXN0ZW5jZVxcbW9uZ29cXE1vbmdvQ29uZmlnRmFjdG9yeS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgY29uZmlnIGZyb20gJy4uLy4uL2NvbmZpZydcbmltcG9ydCBNb25nb0NvbmZpZyBmcm9tICcuLi8uLi8uLi8uLi8uLi9zaGFyZWQvaW5mcmFzdHJ1Y3R1cmUvcGVyc2lzdGVuY2UvbW9uZ28vTW9uZ29Db25maWcnXG5cbmV4cG9ydCBjbGFzcyBNb25nb0NvbmZpZ0ZhY3Rvcnkge1xuXHRzdGF0aWMgY3JlYXRlQ29uZmlnKCk6IE1vbmdvQ29uZmlnIHtcblx0XHRyZXR1cm4ge1xuXHRcdFx0dXJsOiBjb25maWcuZ2V0KCdtb25nby51cmwnKSxcblx0XHR9XG5cdH1cbn1cbiJdLCJ2ZXJzaW9uIjozfQ==

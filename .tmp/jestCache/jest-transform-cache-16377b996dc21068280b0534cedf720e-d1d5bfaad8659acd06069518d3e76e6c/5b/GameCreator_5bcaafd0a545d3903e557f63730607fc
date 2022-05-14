@@ -1,0 +1,53 @@
+be9387e5690002a55527486dd9bd741b
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GameCreator = void 0;
+const GameId_1 = require("../../shared/domain/Games/GameId");
+const Game_1 = require("../domain/Game");
+class GameCreator {
+    constructor(repository) {
+        this.repository = repository;
+    }
+    getGames(filter) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.repository.find(filter) || null;
+        });
+    }
+    getGame(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.repository.findOne(id) || null;
+        });
+    }
+    insertGame(request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const game = new Game_1.Game(
+            /* todo: agrega los campos de tu entidad */
+            );
+            return this.repository.create(game);
+        });
+    }
+    updateGame(request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const game = new Game_1.Game(
+            /* todo: agrega los campos de tu entidad */
+            );
+            return this.repository.update(new GameId_1.GameId(request.id), game);
+        });
+    }
+    deleteGame(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.repository.deleteOne(id);
+        });
+    }
+}
+exports.GameCreator = GameCreator;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcR2FtZXNcXGFwcGxpY2F0aW9uXFxHYW1lQ3JlYXRvci50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFFQSw2REFBMEQ7QUFDMUQseUNBQXNDO0FBTXRDLE1BQWEsV0FBVztJQUd0QixZQUFZLFVBQTBCO1FBQ3BDLElBQUksQ0FBQyxVQUFVLEdBQUcsVUFBVSxDQUFDO0lBQy9CLENBQUM7SUFFSyxRQUFRLENBQUMsTUFBa0I7O1lBQy9CLE9BQU8sSUFBSSxDQUFDLFVBQVUsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLElBQUksSUFBSSxDQUFDO1FBQzlDLENBQUM7S0FBQTtJQUVLLE9BQU8sQ0FBQyxFQUFVOztZQUN0QixPQUFPLElBQUksQ0FBQyxVQUFVLENBQUMsT0FBTyxDQUFDLEVBQUUsQ0FBQyxJQUFJLElBQUksQ0FBQztRQUM3QyxDQUFDO0tBQUE7SUFFSyxVQUFVLENBQUMsT0FBMEI7O1lBQ3pDLE1BQU0sSUFBSSxHQUFHLElBQUksV0FBSTtZQUNuQiwyQ0FBMkM7YUFDNUMsQ0FBQztZQUNGLE9BQU8sSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsSUFBSSxDQUFDLENBQUM7UUFDdEMsQ0FBQztLQUFBO0lBRUssVUFBVSxDQUFDLE9BQTBCOztZQUN6QyxNQUFNLElBQUksR0FBRyxJQUFJLFdBQUk7WUFDbkIsMkNBQTJDO2FBQzVDLENBQUM7WUFDRixPQUFPLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDLElBQUksZUFBTSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsRUFBRSxJQUFJLENBQUMsQ0FBQztRQUM5RCxDQUFDO0tBQUE7SUFFSyxVQUFVLENBQUMsRUFBVTs7WUFDekIsT0FBTyxJQUFJLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxFQUFFLENBQUMsQ0FBQztRQUN2QyxDQUFDO0tBQUE7Q0FDRjtBQWhDRCxrQ0FnQ0MiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcR2FtZXNcXGFwcGxpY2F0aW9uXFxHYW1lQ3JlYXRvci50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJcclxuaW1wb3J0IHsgTnVsbGFibGUgfSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvZG9tYWluL051bGxhYmxlJztcclxuaW1wb3J0IHsgR2FtZUlkIH0gZnJvbSAnLi4vLi4vc2hhcmVkL2RvbWFpbi9HYW1lcy9HYW1lSWQnO1xyXG5pbXBvcnQgeyBHYW1lIH0gZnJvbSAnLi4vZG9tYWluL0dhbWUnO1xyXG5pbXBvcnQgeyBHYW1lUmVwb3NpdG9yeSB9IGZyb20gJy4uL2RvbWFpbi9HYW1lUmVwb3NpdG9yeSc7XHJcbmltcG9ydCB7IENyZWF0ZUdhbWVSZXF1ZXN0IH0gZnJvbSAnLi9DcmVhdGVHYW1lUmVxdWVzdCc7XHJcbmltcG9ydCB7IFVwZGF0ZUdhbWVSZXF1ZXN0IH0gZnJvbSAnLi9VcGRhdGVHYW1lUmVxdWVzdCc7XHJcbmltcG9ydCB7IEdhbWVGaWx0ZXIgfSBmcm9tICcuLi8uLi9zaGFyZWQvZG9tYWluL0dhbWVzL0dhbWVGaWx0ZXInO1xyXG5cclxuZXhwb3J0IGNsYXNzIEdhbWVDcmVhdG9yIHtcclxuICBwcml2YXRlIHJlcG9zaXRvcnk6IEdhbWVSZXBvc2l0b3J5O1xyXG5cclxuICBjb25zdHJ1Y3RvcihyZXBvc2l0b3J5OiBHYW1lUmVwb3NpdG9yeSkge1xyXG4gICAgdGhpcy5yZXBvc2l0b3J5ID0gcmVwb3NpdG9yeTtcclxuICB9XHJcblxyXG4gIGFzeW5jIGdldEdhbWVzKGZpbHRlcjogR2FtZUZpbHRlcik6IFByb21pc2U8TnVsbGFibGU8R2FtZVtdPj4ge1xyXG4gICAgcmV0dXJuIHRoaXMucmVwb3NpdG9yeS5maW5kKGZpbHRlcikgfHwgbnVsbDtcclxuICB9XHJcblxyXG4gIGFzeW5jIGdldEdhbWUoaWQ6IEdhbWVJZCk6IFByb21pc2U8TnVsbGFibGU8IEdhbWUgPj4ge1xyXG4gICAgcmV0dXJuIHRoaXMucmVwb3NpdG9yeS5maW5kT25lKGlkKSB8fCBudWxsO1xyXG4gIH1cclxuXHJcbiAgYXN5bmMgaW5zZXJ0R2FtZShyZXF1ZXN0OiBDcmVhdGVHYW1lUmVxdWVzdCk6IFByb21pc2U8dm9pZD4ge1xyXG4gICAgY29uc3QgZ2FtZSA9IG5ldyBHYW1lKFxyXG4gICAgICAvKiB0b2RvOiBhZ3JlZ2EgbG9zIGNhbXBvcyBkZSB0dSBlbnRpZGFkICovXHJcbiAgICApO1xyXG4gICAgcmV0dXJuIHRoaXMucmVwb3NpdG9yeS5jcmVhdGUoZ2FtZSk7XHJcbiAgfVxyXG5cclxuICBhc3luYyB1cGRhdGVHYW1lKHJlcXVlc3Q6IFVwZGF0ZUdhbWVSZXF1ZXN0KTogUHJvbWlzZTx2b2lkPiB7XHJcbiAgICBjb25zdCBnYW1lID0gbmV3IEdhbWUoXHJcbiAgICAgIC8qIHRvZG86IGFncmVnYSBsb3MgY2FtcG9zIGRlIHR1IGVudGlkYWQgKi9cclxuICAgICk7XHJcbiAgICByZXR1cm4gdGhpcy5yZXBvc2l0b3J5LnVwZGF0ZShuZXcgR2FtZUlkKHJlcXVlc3QuaWQpLCBnYW1lKTtcclxuICB9XHJcblxyXG4gIGFzeW5jIGRlbGV0ZUdhbWUoaWQ6IEdhbWVJZCk6IFByb21pc2U8dm9pZD4ge1xyXG4gICAgcmV0dXJuIHRoaXMucmVwb3NpdG9yeS5kZWxldGVPbmUoaWQpO1xyXG4gIH1cclxufVxyXG4iXSwidmVyc2lvbiI6M30=

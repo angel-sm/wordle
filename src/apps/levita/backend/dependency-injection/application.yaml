@@ -1,0 +1,7 @@
+imports:
+
+  - { resource: ./apps/game.yaml }
+  - { resource: ./Games/application.yaml }
+
+  - { resource: ./apps/wordPicker.yaml }
+  - { resource: ./WordPickers/application.yaml }

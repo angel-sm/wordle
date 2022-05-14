@@ -1,0 +1,4 @@
+{
+	"mongo": { "url": "mongodb://localhost:27017/levita-backend-test" },
+	"typeorm": { "database": "levita-backend-test" }
+}

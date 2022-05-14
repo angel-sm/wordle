@@ -1,0 +1,20 @@
+
+services:
+  Levita.MongoConfig:
+    factory:
+      class: ../../../../../contexts/levita/shared/infrastructure/persistence/mongo/MongoConfigFactory
+      method: 'createConfig'
+
+  Levita.ConnectionManager:
+    factory:
+      class: ../../../../../contexts/shared/infrastructure/persistence/mongo/MongoClientFactory
+      method: 'createClient'
+    arguments: ['levita', '@Levita.MongoConfig']
+
+  Levita.Games.domain.GameRepository:
+    class: ../../../../../contexts/levita/Games/infrastructure/persistence/MongoGameRepository
+    arguments: ['@Levita.ConnectionManager']
+
+  Levita.Games.application.GameCreator:
+    class: ../../../../../contexts/levita/Games/application/GameCreator
+    arguments: ['@Levita.Games.domain.GameRepository', '@Levita.WordPickers.domain.WordPickerRepository']

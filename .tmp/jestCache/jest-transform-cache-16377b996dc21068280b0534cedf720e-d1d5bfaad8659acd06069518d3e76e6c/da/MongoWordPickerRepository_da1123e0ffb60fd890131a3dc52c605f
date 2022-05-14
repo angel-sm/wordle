@@ -1,0 +1,43 @@
+818ff3aaacadc8896568f71b2d07ef1b
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MongoWordPickerRepository = void 0;
+const MongoRepository_1 = require("../../../../shared/infrastructure/persistence/mongo/MongoRepository");
+// interface WordPickerDocument {
+// 	/* todo: agrega los campos de tu entidad */
+// }
+class MongoWordPickerRepository extends MongoRepository_1.MongoRepository {
+    getLast() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const collection = yield this.collection();
+            const words = yield collection.find({}).toArray();
+            const currentWord = words[0].word;
+            return currentWord;
+        });
+    }
+    updateGeneric(word) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const collection = yield this.collection();
+            const words = yield collection.find({}).toArray();
+            const currentWord = words[0];
+            if (!currentWord) {
+                yield collection.insertOne({ word });
+            }
+            collection.updateOne({ _id: currentWord._id }, { $set: { word: word } }, { upsert: false });
+        });
+    }
+    collectionName() {
+        return 'wordPickers';
+    }
+}
+exports.MongoWordPickerRepository = MongoWordPickerRepository;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcV29yZFBpY2tlcnNcXGluZnJhc3RydWN0dXJlXFxwZXJzaXN0ZW5jZVxcTW9uZ29Xb3JkUGlja2VyUmVwb3NpdG9yeS50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQSx5R0FBcUc7QUFJckcsaUNBQWlDO0FBRWpDLCtDQUErQztBQUMvQyxJQUFJO0FBRUosTUFBYSx5QkFBMEIsU0FBUSxpQ0FBMkI7SUFDNUQsT0FBTzs7WUFDbkIsTUFBTSxVQUFVLEdBQUcsTUFBTSxJQUFJLENBQUMsVUFBVSxFQUFFLENBQUE7WUFDMUMsTUFBTSxLQUFLLEdBQUcsTUFBTSxVQUFVLENBQUMsSUFBSSxDQUFDLEVBQUUsQ0FBQyxDQUFDLE9BQU8sRUFBRSxDQUFBO1lBRWpELE1BQU0sV0FBVyxHQUFHLEtBQUssQ0FBQyxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUE7WUFFakMsT0FBTyxXQUFXLENBQUE7UUFDbkIsQ0FBQztLQUFBO0lBRUssYUFBYSxDQUFDLElBQVk7O1lBQy9CLE1BQU0sVUFBVSxHQUFHLE1BQU0sSUFBSSxDQUFDLFVBQVUsRUFBRSxDQUFBO1lBQzFDLE1BQU0sS0FBSyxHQUFHLE1BQU0sVUFBVSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQyxPQUFPLEVBQUUsQ0FBQTtZQUVqRCxNQUFNLFdBQVcsR0FBRyxLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUE7WUFFNUIsSUFBSSxDQUFDLFdBQVcsRUFBRTtnQkFDakIsTUFBTSxVQUFVLENBQUMsU0FBUyxDQUFDLEVBQUUsSUFBSSxFQUFFLENBQUMsQ0FBQTthQUNwQztZQUVELFVBQVUsQ0FBQyxTQUFTLENBQUMsRUFBRSxHQUFHLEVBQUUsV0FBVyxDQUFDLEdBQUcsRUFBRSxFQUFFLEVBQUUsSUFBSSxFQUFFLEVBQUUsSUFBSSxFQUFFLElBQUksRUFBRSxFQUFFLEVBQUUsRUFBRSxNQUFNLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQTtRQUM1RixDQUFDO0tBQUE7SUFFUyxjQUFjO1FBQ3ZCLE9BQU8sYUFBYSxDQUFBO0lBQ3JCLENBQUM7Q0FDRDtBQTFCRCw4REEwQkMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcV29yZFBpY2tlcnNcXGluZnJhc3RydWN0dXJlXFxwZXJzaXN0ZW5jZVxcTW9uZ29Xb3JkUGlja2VyUmVwb3NpdG9yeS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBNb25nb1JlcG9zaXRvcnkgfSBmcm9tICcuLi8uLi8uLi8uLi9zaGFyZWQvaW5mcmFzdHJ1Y3R1cmUvcGVyc2lzdGVuY2UvbW9uZ28vTW9uZ29SZXBvc2l0b3J5J1xuaW1wb3J0IHsgV29yZFBpY2tlciB9IGZyb20gJy4uLy4uL2RvbWFpbi9Xb3JkUGlja2VyJ1xuaW1wb3J0IHsgV29yZFBpY2tlclJlcG9zaXRvcnkgfSBmcm9tICcuLi8uLi9kb21haW4vV29yZFBpY2tlclJlcG9zaXRvcnknXG5cbi8vIGludGVyZmFjZSBXb3JkUGlja2VyRG9jdW1lbnQge1xuXG4vLyBcdC8qIHRvZG86IGFncmVnYSBsb3MgY2FtcG9zIGRlIHR1IGVudGlkYWQgKi9cbi8vIH1cblxuZXhwb3J0IGNsYXNzIE1vbmdvV29yZFBpY2tlclJlcG9zaXRvcnkgZXh0ZW5kcyBNb25nb1JlcG9zaXRvcnk8V29yZFBpY2tlcj4gaW1wbGVtZW50cyBXb3JkUGlja2VyUmVwb3NpdG9yeSB7XG5cdHB1YmxpYyBhc3luYyBnZXRMYXN0KCk6IFByb21pc2U8c3RyaW5nPiB7XG5cdFx0Y29uc3QgY29sbGVjdGlvbiA9IGF3YWl0IHRoaXMuY29sbGVjdGlvbigpXG5cdFx0Y29uc3Qgd29yZHMgPSBhd2FpdCBjb2xsZWN0aW9uLmZpbmQoe30pLnRvQXJyYXkoKVxuXG5cdFx0Y29uc3QgY3VycmVudFdvcmQgPSB3b3Jkc1swXS53b3JkXG5cblx0XHRyZXR1cm4gY3VycmVudFdvcmRcblx0fVxuXG5cdGFzeW5jIHVwZGF0ZUdlbmVyaWMod29yZDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7XG5cdFx0Y29uc3QgY29sbGVjdGlvbiA9IGF3YWl0IHRoaXMuY29sbGVjdGlvbigpXG5cdFx0Y29uc3Qgd29yZHMgPSBhd2FpdCBjb2xsZWN0aW9uLmZpbmQoe30pLnRvQXJyYXkoKVxuXG5cdFx0Y29uc3QgY3VycmVudFdvcmQgPSB3b3Jkc1swXVxuXG5cdFx0aWYgKCFjdXJyZW50V29yZCkge1xuXHRcdFx0YXdhaXQgY29sbGVjdGlvbi5pbnNlcnRPbmUoeyB3b3JkIH0pXG5cdFx0fVxuXG5cdFx0Y29sbGVjdGlvbi51cGRhdGVPbmUoeyBfaWQ6IGN1cnJlbnRXb3JkLl9pZCB9LCB7ICRzZXQ6IHsgd29yZDogd29yZCB9IH0sIHsgdXBzZXJ0OiBmYWxzZSB9KVxuXHR9XG5cblx0cHJvdGVjdGVkIGNvbGxlY3Rpb25OYW1lKCk6IHN0cmluZyB7XG5cdFx0cmV0dXJuICd3b3JkUGlja2Vycydcblx0fVxufVxuIl0sInZlcnNpb24iOjN9

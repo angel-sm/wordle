@@ -1,0 +1,32 @@
+
+services:
+  Levita.MongoConfig:
+    factory:
+      class: ../../../../../contexts/levita/shared/infrastructure/persistence/mongo/MongoConfigFactory
+      method: 'createConfig'
+
+  Levita.ConnectionManager:
+    factory:
+      class: ../../../../../contexts/shared/infrastructure/persistence/mongo/MongoClientFactory
+      method: 'createClient'
+    arguments: ['levita', '@Levita.MongoConfig']
+
+  Levita.WordPickers.domain.WordPickerRepository:
+    class: ../../../../../contexts/levita/WordPickers/infrastructure/persistence/MongoWordPickerRepository
+    arguments: ['@Levita.ConnectionManager']
+  
+  Levita.init.Reader.Word:
+    factory:
+      class: ../../../../../contexts/levita/shared/infrastructure/reader/Reader
+      method: 'getWord'
+    arguments: ['@Levita.WordPickers.domain.WordPickerRepository']
+
+  Levita.init.Reader:
+    factory:
+      class: ../../../../../contexts/levita/shared/infrastructure/reader/Reader
+      method: 'initCron'
+    arguments: ['@Levita.WordPickers.domain.WordPickerRepository']
+  
+  Levita.WordPickers.application.WordPickerCreator:
+    class: ../../../../../contexts/levita/WordPickers/application/WordPickerCreator
+    arguments: ['@Levita.WordPickers.domain.WordPickerRepository', '@Levita.init.Reader.Word', '@Levita.init.Reader']

@@ -1,0 +1,20 @@
+be3e47827f2f85b01c3cf0c8e30d8387
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Game = void 0;
+const AggregateRoot_1 = require("../../../shared/domain/AggregateRoot");
+class Game extends AggregateRoot_1.AggregateRoot {
+    constructor( /* todo: agrega los campos de tu entidad */) {
+        super();
+    }
+    static fromPrimitives() {
+        return new Game();
+    }
+    toPrimitives() {
+        return {};
+    }
+    checkLetterPositions(guessWord, word) {
+    }
+}
+exports.Game = Game;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcR2FtZXNcXGRvbWFpblxcR2FtZS50cyIsIm1hcHBpbmdzIjoiOzs7QUFBQSx3RUFBb0U7QUFFcEUsTUFBYSxJQUFLLFNBQVEsNkJBQWE7SUFDdEMsYUFBWSwyQ0FBMkM7UUFDdEQsS0FBSyxFQUFFLENBQUE7SUFDUixDQUFDO0lBRUQsTUFBTSxDQUFDLGNBQWM7UUFDcEIsT0FBTyxJQUFJLElBQUksRUFBRSxDQUFBO0lBQ2xCLENBQUM7SUFFRCxZQUFZO1FBQ1gsT0FBTyxFQUFFLENBQUE7SUFDVixDQUFDO0lBRU8sb0JBQW9CLENBQUMsU0FBaUIsRUFBRSxJQUFZO0lBRTNELENBQUM7Q0FDRjtBQWhCRCxvQkFnQkMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcR2FtZXNcXGRvbWFpblxcR2FtZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBBZ2dyZWdhdGVSb290IH0gZnJvbSAnLi4vLi4vLi4vc2hhcmVkL2RvbWFpbi9BZ2dyZWdhdGVSb290J1xyXG5cclxuZXhwb3J0IGNsYXNzIEdhbWUgZXh0ZW5kcyBBZ2dyZWdhdGVSb290IHtcclxuXHRjb25zdHJ1Y3RvcigvKiB0b2RvOiBhZ3JlZ2EgbG9zIGNhbXBvcyBkZSB0dSBlbnRpZGFkICovKSB7XHJcblx0XHRzdXBlcigpXHJcblx0fVxyXG5cclxuXHRzdGF0aWMgZnJvbVByaW1pdGl2ZXMoKTogR2FtZSB7XHJcblx0XHRyZXR1cm4gbmV3IEdhbWUoKVxyXG5cdH1cclxuXHJcblx0dG9QcmltaXRpdmVzKCk6IGFueSB7XHJcblx0XHRyZXR1cm4ge31cclxuXHR9XHJcblxyXG4gIHB1YmxpYyBjaGVja0xldHRlclBvc2l0aW9ucyhndWVzc1dvcmQ6IHN0cmluZywgd29yZDogc3RyaW5nKSB7XHJcbiAgICBcclxuICB9XHJcbn1cclxuIl0sInZlcnNpb24iOjN9

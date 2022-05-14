@@ -1,0 +1,5 @@
+
+services:
+  Apps.levita.controllers.WordPickerGetOneController:
+    class: ../../controllers/WordPickers/WordPickerGetOneController
+    arguments: ["@Levita.WordPickers.application.WordPickerCreator"]
