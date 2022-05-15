@@ -15,6 +15,9 @@ const levitaConfig = convict({
 			default: 'mongodb://localhost:27017/dev',
 		},
 	},
+	jwt_access: {
+		secret: 'secret',
+	},
 })
 
 levitaConfig.loadFile([__dirname + '/default.json', __dirname + '/' + levitaConfig.get('env') + '.json'])

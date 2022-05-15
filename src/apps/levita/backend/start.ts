@@ -1,7 +1,7 @@
-import { LevitaBackendApp } from './LevitaBackendApp'
+import { App } from './app'
 
 try {
-	new LevitaBackendApp().start()
+	new App().start()
 } catch (e) {
 	console.log(e)
 	process.exit(1)

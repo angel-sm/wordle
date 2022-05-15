@@ -1,1 +1,0 @@
-{"file":"C:\\Users\\josea\\Documents\\wordle\\src\\Contexts\\shared\\domain\\AggregateRoot.ts","mappings":";;;AAAA,MAAsB,aAAa;CAElC;AAFD,sCAEC","names":[],"sources":["C:\\Users\\josea\\Documents\\wordle\\src\\Contexts\\shared\\domain\\AggregateRoot.ts"],"sourcesContent":["export abstract class AggregateRoot {\n\tabstract toPrimitives(): any\n}\n"],"version":3}

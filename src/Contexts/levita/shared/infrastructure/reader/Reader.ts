@@ -4,13 +4,14 @@ import cron from 'cron'
 import { GenericRepository } from '../../domain/GenericRepository'
 
 export class Reader {
-	static initCron(repository: GenericRepository) {
+	static initCron(repository: GenericRepository, resetRepository: GenericRepository): void {
 		console.log('🚀 cron job init')
 		new cron.CronJob({
 			cronTime: '10 * * * * *',
 			onTick: () => {
 				console.log('🚀 cron job call')
 				Reader.getWord(repository)
+				resetRepository.reset()
 			},
 			start: true,
 		})

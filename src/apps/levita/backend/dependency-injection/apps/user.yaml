@@ -1,0 +1,9 @@
+
+services:
+  Apps.levita.controllers.UserAuthController:
+    class: ../../controllers/Users/UserAuthController
+    arguments: ["@Levita.Users.application.UserCreator"]
+    
+  # Apps.levita.controllers.UserGetOneController:
+  #   class: ../../controllers/Users/UserGetOneController
+  #   arguments: ["@Levita.Users.application.UserCreator"]

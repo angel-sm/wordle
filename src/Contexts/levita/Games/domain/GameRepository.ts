@@ -1,3 +1,4 @@
 export interface GameRepository {
-	play(): Promise<any>
+	setTrie(userId: string): Promise<void>
+	setWinn(userId: string): Promise<void>
 }

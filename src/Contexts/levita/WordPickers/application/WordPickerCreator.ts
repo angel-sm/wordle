@@ -8,7 +8,7 @@ export class WordPickerCreator {
 	}
 
 	async getWordPicker(): Promise<string> {
-		return this.repository.getLast()
+		return (await this.repository.getLast()).word
 	}
 
 	async updateGeneric(word: string): Promise<void> {

@@ -25,7 +25,7 @@ services:
     factory:
       class: ../../../../../contexts/levita/shared/infrastructure/reader/Reader
       method: 'initCron'
-    arguments: ['@Levita.WordPickers.domain.WordPickerRepository']
+    arguments: ['@Levita.WordPickers.domain.WordPickerRepository', '@Levita.Games.domain.GameRepository']
   
   Levita.WordPickers.application.WordPickerCreator:
     class: ../../../../../contexts/levita/WordPickers/application/WordPickerCreator

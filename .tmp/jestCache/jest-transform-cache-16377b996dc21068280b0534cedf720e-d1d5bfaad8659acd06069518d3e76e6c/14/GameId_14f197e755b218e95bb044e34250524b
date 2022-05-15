@@ -1,9 +1,0 @@
-8135f41273378e7d8537393a59026712
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.GameId = void 0;
-const Uuid_1 = require("../../../../shared/domain/value-object/Uuid");
-class GameId extends Uuid_1.Uuid {
-}
-exports.GameId = GameId;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcc2hhcmVkXFxkb21haW5cXEdhbWVzXFxHYW1lSWQudHMiLCJtYXBwaW5ncyI6Ijs7O0FBQ0Esc0VBQW1FO0FBRW5FLE1BQWEsTUFBTyxTQUFRLFdBQUk7Q0FBRztBQUFuQyx3QkFBbUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxqb3NlYVxcRG9jdW1lbnRzXFx3b3JkbGVcXHNyY1xcQ29udGV4dHNcXGxldml0YVxcc2hhcmVkXFxkb21haW5cXEdhbWVzXFxHYW1lSWQudHMiXSwic291cmNlc0NvbnRlbnQiOlsiXHJcbmltcG9ydCB7IFV1aWQgfSBmcm9tICcuLi8uLi8uLi8uLi9zaGFyZWQvZG9tYWluL3ZhbHVlLW9iamVjdC9VdWlkJztcclxuXHJcbmV4cG9ydCBjbGFzcyBHYW1lSWQgZXh0ZW5kcyBVdWlkIHt9XHJcbiJdLCJ2ZXJzaW9uIjozfQ==

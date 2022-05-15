@@ -2,32 +2,39 @@ import { MongoRepository } from '../../../../shared/infrastructure/persistence/m
 import { WordPicker } from '../../domain/WordPicker'
 import { WordPickerRepository } from '../../domain/WordPickerRepository'
 
-// interface WordPickerDocument {
-
-// 	/* todo: agrega los campos de tu entidad */
-// }
-
+interface WordPickerDocument {
+	word: string
+}
 export class MongoWordPickerRepository extends MongoRepository<WordPicker> implements WordPickerRepository {
-	public async getLast(): Promise<string> {
+	public async guessWord(word: string): Promise<void> {
 		const collection = await this.collection()
-		const words = await collection.find({}).toArray()
+		const result = await collection.findOne({ word })
 
-		const currentWord = words[0].word
+		if (result) {
+			await collection.updateOne({ word }, { $set: { guessed: result.guessed + 1 } })
+		}
+	}
 
-		return currentWord
+	public async getLast(): Promise<WordPicker> {
+		const collection = await this.collection()
+		const result = await collection.findOne<WordPickerDocument>({ isCurrent: true })
+
+		return result && WordPicker.fromPrimitives({ ...result }).toPrimitives()
 	}
 
 	async updateGeneric(word: string): Promise<void> {
 		const collection = await this.collection()
-		const words = await collection.find({}).toArray()
 
-		const currentWord = words[0]
+		const result = await collection.findOne<WordPickerDocument>({ word })
 
-		if (!currentWord) {
-			await collection.insertOne({ word })
+		if (result) {
+			await collection.updateOne({ isCurrent: true }, { $set: { isCurrent: false } })
+			await collection.updateOne({ word }, { $set: { isCurrent: true } })
+			return
 		}
 
-		collection.updateOne({ _id: currentWord._id }, { $set: { word: word } }, { upsert: false })
+		await collection.updateOne({ isCurrent: true }, { $set: { isCurrent: false } })
+		await collection.insertOne({ word, isCurrent: true, guessed: 0 })
 	}
 
 	protected collectionName(): string {

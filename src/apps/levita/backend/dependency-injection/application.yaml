@@ -1,5 +1,9 @@
 imports:
 
+  - { resource: ./apps/user.yaml }
+  - { resource: ./Users/application.yaml }
+
+
   - { resource: ./apps/game.yaml }
   - { resource: ./Games/application.yaml }
 

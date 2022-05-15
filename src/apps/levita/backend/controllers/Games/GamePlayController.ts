@@ -11,12 +11,12 @@ type GamePostRequest = Request & {
 export class GamePlayController implements Controller {
 	constructor(private gameCreator: GameCreator) {}
 
-	async run(req: GamePostRequest, res: Response) {		
+	async run(req: GamePostRequest, res: Response) {
 		try {
 			await this.gameCreator.play(req.body)
 			res.status(httpStatus.OK).send()
-		} catch (error) {
-			res.status(httpStatus.INTERNAL_SERVER_ERROR).send()
+		} catch (error: Error | unknown | any) {
+			res.status(httpStatus.BAD_REQUEST).send(error?.message || 'Invalid request')
 		}
 	}
 }

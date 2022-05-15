@@ -1,0 +1,20 @@
+
+services:
+  Levita.MongoConfig:
+    factory:
+      class: ../../../../../contexts/levita/shared/infrastructure/persistence/mongo/MongoConfigFactory
+      method: 'createConfig'
+
+  Levita.ConnectionManager:
+    factory:
+      class: ../../../../../contexts/shared/infrastructure/persistence/mongo/MongoClientFactory
+      method: 'createClient'
+    arguments: ['levita', '@Levita.MongoConfig']
+
+  Levita.Users.domain.UserRepository:
+    class: ../../../../../contexts/levita/Users/infrastructure/persistence/MongoUserRepository
+    arguments: ['@Levita.ConnectionManager']
+
+  Levita.Users.application.UserCreator:
+    class: ../../../../../contexts/levita/Users/application/UserCreator
+    arguments: ['@Levita.Users.domain.UserRepository']
